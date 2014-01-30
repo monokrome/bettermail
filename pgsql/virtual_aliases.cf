@@ -1,0 +1,6 @@
+# TODO: Does UNIX authentication work, or do I need virtual users?
+user = 
+password =
+dbname = postfix
+
+query = SELECT forward_address FROM virtual_aliases WHERE name='%s' AND active=true

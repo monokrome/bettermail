@@ -6,6 +6,6 @@ Run a simple mail server in docker.
 Technologies
 ------------
 
-- Postfix (Maybe Exim4?)
+- Postfix
 - Courier-IMAP
 - Spamassasin (aided by pyzor)

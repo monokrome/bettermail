@@ -61,6 +61,6 @@ RUN echo 'relayhost = ' >> /etc/postfix/main.cf
 
 # Set up postmaster aliases
 RUN echo 'alias_maps = pgsql:/etc/postfix/pgsql/aliases.cf' >> /etc/postfix/main.cf
-RUN echo 'virtual_maps = pgsql:/etc/postfix/pgsql/virtual_aliases.cf' >> /etc/postfix/main.cf
+RUN echo 'virtual_alias_maps = pgsql:/etc/postfix/pgsql/virtual_aliases.cf' >> /etc/postfix/main.cf
 
 # COMMIT

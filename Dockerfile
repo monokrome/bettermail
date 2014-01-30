@@ -35,7 +35,6 @@ RUN pyzor discover
 
 # Set up domain and orgigin settings
 
-
 # myhostname and mydomain are optional. By default, in Postfix, they are
 # actually set to use the hostname. myhostname is the full machine hostname,
 # while mydomain is the parent zone of the machine hostname -unless the parent

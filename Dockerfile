@@ -19,8 +19,8 @@ RUN apt-get install -qqy postgresql
 ADD sql /etc/postfix/sql
 
 RUN service postgresql start && su postgres -c 'createuser root -s'
-RUN service postgresql start && createdb mail
-RUN service postgresql start && cat /etc/postfix/sql/*.sql | psql mail 2> /dev/null
+RUN service postgresql start && createdb postfix
+RUN service postgresql start && cat /etc/postfix/sql/*.sql | psql postfix 2> /dev/null
 
 # COMMIT
 

@@ -16,6 +16,12 @@ RUN apt-get install -qqy vim
 # Set up the database server for mailing.
 RUN apt-get install -qqy postgresql
 
+ADD sql /etc/postfix/sql
+
+RUN service postgresql start && su postgres -c 'createuser root -s'
+RUN service postgresql start && createdb mail
+RUN service postgresql start && cat /etc/postfix/sql/*.sql | psql mail 2> /dev/null
+
 # COMMIT
 
 # Set up Postfix for POP
@@ -33,7 +39,9 @@ RUN pyzor discover
 
 # COMMIT
 
-# Set up domain and orgigin settings
+# Set up domain and origin settings
+
+ADD pgsql /etc/postfix/pgsql
 
 # myhostname and mydomain are optional. By default, in Postfix, they are
 # actually set to use the hostname. myhostname is the full machine hostname,

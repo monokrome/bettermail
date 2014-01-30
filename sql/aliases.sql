@@ -4,5 +4,5 @@ CREATE TABLE aliases (
 
         name text UNIQUE NOT NULL,
 
-        forward_address text NOT NULL,
+        forward_address text NOT NULL
 );
